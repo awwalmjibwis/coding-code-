@@ -19,7 +19,7 @@ class JibwisAIApp extends StatelessWidget {
           brightness: Brightness.dark,
         ),
       ),
-      home: const HomeScreen(),
+      home: const MainNavigation(),
     );
   }
 }
