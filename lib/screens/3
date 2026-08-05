@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import '../widgets/dashboard_card.dart';
 
 class HomeScreen extends StatelessWidget {
   const HomeScreen({super.key});
@@ -10,14 +11,37 @@ class HomeScreen extends StatelessWidget {
         title: const Text("Jibwis AI"),
         centerTitle: true,
       ),
-      body: const Center(
-        child: Text(
-          "Welcome to Jibwis AI",
-          style: TextStyle(
-            fontSize: 24,
-            fontWeight: FontWeight.bold,
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          DashboardCard(
+            icon: Icons.show_chart,
+            title: "Live Market",
+            subtitle: "Track Forex & Crypto markets in real time.",
+            color: Colors.green,
           ),
-        ),
+          SizedBox(height: 12),
+          DashboardCard(
+            icon: Icons.campaign,
+            title: "Premium Signals",
+            subtitle: "Receive high-quality trading signals.",
+            color: Colors.orange,
+          ),
+          SizedBox(height: 12),
+          DashboardCard(
+            icon: Icons.smart_toy,
+            title: "AI Analysis",
+            subtitle: "Ask AI to analyze any trading chart.",
+            color: Colors.blue,
+          ),
+          SizedBox(height: 12),
+          DashboardCard(
+            icon: Icons.school,
+            title: "AI Academy",
+            subtitle: "Learn trading step by step.",
+            color: Colors.purple,
+          ),
+        ],
       ),
     );
   }
