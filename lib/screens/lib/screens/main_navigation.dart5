@@ -1,3 +1,4 @@
+import 'ai_screen.dart';
 import 'signals_screen.dart';
 import 'package:flutter/material.dart';
 import 'home_screen.dart';
@@ -16,7 +17,7 @@ class _MainNavigationState extends State<MainNavigation> {
     HomeScreen(),
     Center(child: Text("Market")),
     SignalsScreen(),
-    Center(child: Text("AI")),
+    AIScreen(),
     Center(child: Text("Profile")),
   ];
 
