@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+class ProfileScreen extends StatelessWidget {
+  const ProfileScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("My Profile"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          CircleAvatar(
+            radius: 50,
+            child: Icon(Icons.person, size: 50),
+          ),
+          SizedBox(height: 20),
+          Center(
+            child: Text(
+              "Welcome to Jibwis AI",
+              style: TextStyle(
+                fontSize: 22,
+                fontWeight: FontWeight.bold,
+              ),
+            ),
+          ),
+          SizedBox(height: 30),
+          ListTile(
+            leading: Icon(Icons.email),
+            title: Text("Email"),
+            subtitle: Text("Not logged in"),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.workspace_premium),
+            title: Text("VIP Status"),
+            subtitle: Text("Free Plan"),
+          ),
+          Divider(),
+          ListTile(
+            leading: Icon(Icons.settings),
+            title: Text("Settings"),
+          ),
+        ],
+      ),
+    );
+  }
+}
