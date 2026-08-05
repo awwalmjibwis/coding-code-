@@ -1,0 +1,41 @@
+import 'package:flutter/material.dart';
+
+class SignalsScreen extends StatelessWidget {
+  const SignalsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Trading Signals"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Icon(Icons.trending_up, color: Colors.white),
+              ),
+              title: Text("EUR/USD - BUY"),
+              subtitle: Text("Entry: 1.1050 | TP: 1.1100 | SL: 1.1020"),
+            ),
+          ),
+          SizedBox(height: 12),
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Icon(Icons.trending_down, color: Colors.white),
+              ),
+              title: Text("GBP/USD - SELL"),
+              subtitle: Text("Entry: 1.2700 | TP: 1.2650 | SL: 1.2730"),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
