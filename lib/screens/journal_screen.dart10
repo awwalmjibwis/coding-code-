@@ -1,0 +1,51 @@
+import 'package:flutter/material.dart';
+
+class JournalScreen extends StatelessWidget {
+  const JournalScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Trading Journal"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.book,
+                color: Colors.blue,
+              ),
+              title: Text("XAU/USD"),
+              subtitle: Text(
+                "BUY | Profit: +\$120\nDate: 07 Aug 2026",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.book,
+                color: Colors.red,
+              ),
+              title: Text("EUR/USD"),
+              subtitle: Text(
+                "SELL | Loss: -\$45\nDate: 06 Aug 2026",
+              ),
+            ),
+          ),
+        ],
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        child: const Icon(Icons.add),
+      ),
+    );
+  }
+}
