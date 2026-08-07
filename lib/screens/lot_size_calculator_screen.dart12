@@ -1,0 +1,75 @@
+import 'package:flutter/material.dart';
+
+class LotSizeCalculatorScreen extends StatelessWidget {
+  const LotSizeCalculatorScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Lot Size Calculator"),
+        centerTitle: true,
+      ),
+      body: Padding(
+        padding: const EdgeInsets.all(16),
+        child: ListView(
+          children: [
+            const TextField(
+              decoration: InputDecoration(
+                labelText: "Account Balance",
+                border: OutlineInputBorder(),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+
+            const SizedBox(height: 16),
+
+            const TextField(
+              decoration: InputDecoration(
+                labelText: "Risk Percentage (%)",
+                border: OutlineInputBorder(),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+
+            const SizedBox(height: 16),
+
+            const TextField(
+              decoration: InputDecoration(
+                labelText: "Stop Loss (Pips)",
+                border: OutlineInputBorder(),
+              ),
+              keyboardType: TextInputType.number,
+            ),
+
+            const SizedBox(height: 24),
+
+            SizedBox(
+              width: double.infinity,
+              child: ElevatedButton(
+                onPressed: () {},
+                child: const Text("Calculate Lot Size"),
+              ),
+            ),
+
+            const SizedBox(height: 24),
+
+            const Card(
+              child: Padding(
+                padding: EdgeInsets.all(16),
+                child: Text(
+                  "Recommended Lot Size: 0.00",
+                  textAlign: TextAlign.center,
+                  style: TextStyle(
+                    fontSize: 20,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ),
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+}
