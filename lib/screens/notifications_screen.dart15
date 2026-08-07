@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+class NotificationsScreen extends StatelessWidget {
+  const NotificationsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Notifications"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Icon(
+                  Icons.trending_up,
+                  color: Colors.white,
+                ),
+              ),
+              title: Text("New BUY Signal"),
+              subtitle: Text(
+                "XAU/USD BUY signal is available.",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Icon(
+                  Icons.warning,
+                  color: Colors.white,
+                ),
+              ),
+              title: Text("High Impact News"),
+              subtitle: Text(
+                "Important USD economic event is coming.",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.blue,
+                child: Icon(
+                  Icons.smart_toy,
+                  color: Colors.white,
+                ),
+              ),
+              title: Text("AI Market Update"),
+              subtitle: Text(
+                "Jibwis AI has a new market analysis for you.",
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
