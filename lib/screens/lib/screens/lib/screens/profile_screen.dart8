@@ -1,5 +1,13 @@
 import 'package:flutter/material.dart';
 
+import 'settings_screen.dart';
+import 'journal_screen.dart';
+import 'risk_calculator_screen.dart';
+import 'lot_size_calculator_screen.dart';
+import 'economic_calendar_screen.dart';
+import 'forex_news_screen.dart';
+import 'notifications_screen.dart';
+
 class ProfileScreen extends StatelessWidget {
   const ProfileScreen({super.key});
 
@@ -12,13 +20,18 @@ class ProfileScreen extends StatelessWidget {
       ),
       body: ListView(
         padding: const EdgeInsets.all(16),
-        children: const [
-          CircleAvatar(
+        children: [
+          const CircleAvatar(
             radius: 50,
-            child: Icon(Icons.person, size: 50),
+            child: Icon(
+              Icons.person,
+              size: 50,
+            ),
           ),
-          SizedBox(height: 20),
-          Center(
+
+          const SizedBox(height: 20),
+
+          const Center(
             child: Text(
               "Welcome to Jibwis AI",
               style: TextStyle(
@@ -27,22 +40,124 @@ class ProfileScreen extends StatelessWidget {
               ),
             ),
           ),
-          SizedBox(height: 30),
-          ListTile(
+
+          const SizedBox(height: 30),
+
+          const ListTile(
             leading: Icon(Icons.email),
             title: Text("Email"),
             subtitle: Text("Not logged in"),
           ),
-          Divider(),
-          ListTile(
-            leading: Icon(Icons.workspace_premium),
+
+          const Divider(),
+
+          const ListTile(
+            leading: Icon(
+              Icons.workspace_premium,
+              color: Colors.amber,
+            ),
             title: Text("VIP Status"),
             subtitle: Text("Free Plan"),
           ),
-          Divider(),
+
+          const Divider(),
+
           ListTile(
-            leading: Icon(Icons.settings),
-            title: Text("Settings"),
+            leading: const Icon(Icons.settings),
+            title: const Text("Settings"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const SettingsScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.book),
+            title: const Text("Trading Journal"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const JournalScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.calculate),
+            title: const Text("Risk Calculator"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const RiskCalculatorScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.straighten),
+            title: const Text("Lot Size Calculator"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const LotSizeCalculatorScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.calendar_month),
+            title: const Text("Economic Calendar"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const EconomicCalendarScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.newspaper),
+            title: const Text("Forex News"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const ForexNewsScreen(),
+                ),
+              );
+            },
+          ),
+
+          ListTile(
+            leading: const Icon(Icons.notifications),
+            title: const Text("Notifications"),
+            trailing: const Icon(Icons.arrow_forward_ios, size: 16),
+            onTap: () {
+              Navigator.push(
+                context,
+                MaterialPageRoute(
+                  builder: (context) => const NotificationsScreen(),
+                ),
+              );
+            },
           ),
         ],
       ),
