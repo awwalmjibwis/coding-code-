@@ -1,0 +1,71 @@
+import 'package:flutter/material.dart';
+
+class EconomicCalendarScreen extends StatelessWidget {
+  const EconomicCalendarScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Economic Calendar"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.red,
+                child: Text(
+                  "USD",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              title: Text("Non-Farm Payroll (NFP)"),
+              subtitle: Text(
+                "High Impact\nTime: 1:30 PM",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.orange,
+                child: Text(
+                  "EUR",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              title: Text("ECB Interest Rate Decision"),
+              subtitle: Text(
+                "High Impact\nTime: 2:15 PM",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: CircleAvatar(
+                backgroundColor: Colors.green,
+                child: Text(
+                  "GBP",
+                  style: TextStyle(color: Colors.white),
+                ),
+              ),
+              title: Text("GDP Report"),
+              subtitle: Text(
+                "Medium Impact\nTime: 9:00 AM",
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
