@@ -1,0 +1,77 @@
+import 'package:flutter/material.dart';
+
+class MarketScreen extends StatelessWidget {
+  const MarketScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Live Market"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.show_chart,
+                color: Colors.amber,
+              ),
+              title: Text("XAU/USD"),
+              subtitle: Text("Gold"),
+              trailing: Text(
+                "BUY",
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.currency_exchange,
+                color: Colors.blue,
+              ),
+              title: Text("EUR/USD"),
+              subtitle: Text("Euro vs Dollar"),
+              trailing: Text(
+                "SELL",
+                style: TextStyle(
+                  color: Colors.red,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.currency_bitcoin,
+                color: Colors.orange,
+              ),
+              title: Text("BTC/USD"),
+              subtitle: Text("Bitcoin"),
+              trailing: Text(
+                "BUY",
+                style: TextStyle(
+                  color: Colors.green,
+                  fontWeight: FontWeight.bold,
+                ),
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
