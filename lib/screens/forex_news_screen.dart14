@@ -1,0 +1,62 @@
+import 'package:flutter/material.dart';
+
+class ForexNewsScreen extends StatelessWidget {
+  const ForexNewsScreen({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: AppBar(
+        title: const Text("Forex News"),
+        centerTitle: true,
+      ),
+      body: ListView(
+        padding: const EdgeInsets.all(16),
+        children: const [
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.newspaper,
+                color: Colors.blue,
+              ),
+              title: Text("Gold rises after US inflation data"),
+              subtitle: Text(
+                "Gold prices moved higher as inflation data came in lower than expected.",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.public,
+                color: Colors.green,
+              ),
+              title: Text("EUR gains strength against USD"),
+              subtitle: Text(
+                "The Euro strengthened after positive economic reports.",
+              ),
+            ),
+          ),
+
+          SizedBox(height: 12),
+
+          Card(
+            child: ListTile(
+              leading: Icon(
+                Icons.currency_bitcoin,
+                color: Colors.orange,
+              ),
+              title: Text("Bitcoin breaks major resistance"),
+              subtitle: Text(
+                "BTC continues bullish momentum after strong buying pressure.",
+              ),
+            ),
+          ),
+        ],
+      ),
+    );
+  }
+}
